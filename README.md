@@ -1,5 +1,5 @@
 # ThaiProvince
-Create an R Function to Convert Province Codes to Full Province Name
+Create an R Function to Convert Province Codes to Full Province Name 
    #'x' is the column of a data.frame that holds 2 digit state codes
 stateFromLower <-function(x) {
    #read 52 state codes into local variable [includes DC (Washington D.C. and PR (Puerto Rico)]
