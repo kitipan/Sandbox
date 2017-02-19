@@ -1,24 +1,11 @@
 # ThaiProvince
-Create an R Function to Convert Province Codes to Full Province Name 
-   #'x' is the column of a data.frame that holds 2 digit state codes
-stateFromLower <-function(x) {
-   #read 52 state codes into local variable [includes DC (Washington D.C. and PR (Puerto Rico)]
+#Create an R Function to Convert Province Codes to Full Province Name 
+#'x' is the column of a data.frame that holds 2 digit state codes
+ThaiProvince <-function(x) {
   st.codes<-data.frame(
-                      state=as.factor(c("AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA",
-                                         "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME",
-                                         "MI", "MN", "MO", "MS",  "MT", "NC", "ND", "NE", "NH", "NJ", "NM",
-                                         "NV", "NY", "OH", "OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN",
-                                         "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY")),
-                      full=as.factor(c("alaska","alabama","arkansas","arizona","california","colorado",
-                                       "connecticut","district of columbia","delaware","florida","georgia",
-                                       "hawaii","iowa","idaho","illinois","indiana","kansas","kentucky",
-                                       "louisiana","massachusetts","maryland","maine","michigan","minnesota",
-                                       "missouri","mississippi","montana","north carolina","north dakota",
-                                       "nebraska","new hampshire","new jersey","new mexico","nevada",
-                                       "new york","ohio","oklahoma","oregon","pennsylvania","puerto rico",
-                                       "rhode island","south carolina","south dakota","tennessee","texas",
-                                       "utah","virginia","vermont","washington","wisconsin",
-                                       "west virginia","wyoming"))
+                  state=as.factor(c("AC","AT","BM","BK","BR","CC","CN","CY","CT","CM","CR","CB","CP","KL","KP","KN","KK","KR","LG","LN","LE","LB","MH","MS","MD","NN","NP","NF","NR","NS","NT","NA","NW","NB","NH","NO","PT","PI","PG","PL","PY","PH","PE","PC","PS","PR","PA","PU","PB","PK","RN","RT","RY","RE","SK","SN","SP","SS","SM","SR","SA","SB","SI","SG","SO","SH","ST","SU","TK","TG","TT","UR","UN","UT","UD","YL","YS")),
+                  
+                      full=as.factor(c("Amnat Charoen","Ang Thong","Bangkok Metropolis","Bueng Kan","Buri Ram","Chachoengsao","Chai Nat","Chaiyaphum","Chanthaburi","Chiang Mai","Chiang Rai","Chon Buri","Chumphon","Kalasin","Kamphaeng Phet","Kanchanaburi","Khon Kaen","Krabi","Lampang","Lamphun","Loei","Lop Buri","Mae Hong Son","Maha Sarakham","Mukdahan","Nakhon Nayok","Nakhon Pathom","Nakhon Phanom","Nakhon Ratchasima","Nakhon Sawan","Nakhon Si Thammarat","Nan","Narathiwat","Nong Bua Lam Phu","Nong Khai","Nonthaburi","Pathum Thani","Pattani","Phangnga","Phatthalung","Phayao","Phetchabun","Phetchaburi","Phichit","Phitsanulok","Phrae","Phra Nakhon Si Ayutthaya","Phuket","Prachin Buri","Prachuap Khiri Khan","Ranong","Ratchaburi","Rayong","Roi Et","Sa Kaeo","Sakon Nakhon","Samut Prakan","Samut Sakhon","Samut Songkhram","Saraburi","Satun","Sing Buri","Si Sa Ket","Songkhla","Sukhothai","Suphan Buri","Surat Thani","Surin","Tak","Trang","Trat","Ubon Ratchathani","Udon Thani","Uthai Thani","Uttaradit","Yala","Yasothon"))
                        )
      #create an nx1 data.frame of state codes from source column
   st.x<-data.frame(state=x)
