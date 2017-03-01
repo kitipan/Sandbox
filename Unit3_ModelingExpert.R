@@ -35,6 +35,10 @@ summary(QualityLog)
 # Make predictions on training set
 predictTrain = predict(QualityLog, type="response")
 
+confint(QualityLog) # 95% CI for the coefficients
+exp(coef(QualityLog)) # exponentiated coefficients
+exp(confint(QualityLog)) # 95% CI for exponentiated coefficients
+
 # Analyze predictions
 summary(predictTrain)
 tapply(predictTrain, qualityTrain$PoorCare, mean)
