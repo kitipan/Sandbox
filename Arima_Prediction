@@ -1,0 +1,22 @@
+# Adding missing libraries e.g for forecast:        install.packages("forecast")
+
+library(forecast)
+library(fpp)
+library(readr)
+Stock <- read_csv("~/GitHub/r-stockPrediction/input/cpall.csv")
+tsStock = ts((Stock$Close),start=c(2007, 1),frequency=365)
+train <- window(tsStock, end=2010)
+test <- window(tsStock, start=2013)
+        
+tl <-  seq(2007,2010,length=length(train))
+tl2 <-  tl^7
+polyStock <-  lm(train ~ tl + tl2)
+stltSock <-  stl(train,s.window="periodic")
+tsStocktrend1 <- ts(polyStock$fit,start=c(2007, 1),frequency=365)
+tsStocktrend2 <-  stlStock$time.series[,2]
+
+auto.arima(train)
+fitr <-arima(train, order=c(2,1,1))
+fitresid <- residuals(fitr)
+Box.test(fitresid, lag=10, type = "Ljung-Box")
+fitr_for <- forecast(fitr,h=30)
