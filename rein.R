@@ -3,7 +3,7 @@ library(data.table)
 library(ggplot2)
 
 #Connect to SQL using RODBC, fetch to data.table
-dbhandle <- odbcDriverConnect('driver={SQL Server};server=DESKTOP-2UN78L4;database=dbReinsurance;trusted_connection=true')
+dbhandle <- odbcDriverConnect('driver={SQL Server};server=DESKTOP-5RUE27S;database=dbReinsurance;trusted_connection=true')
 res <- data.table(sqlQuery(dbhandle, 'select * from dbo.STEP3_COMBINED_EB_DATA'))
 
 #Average Age by Broker and GRoup Policy
